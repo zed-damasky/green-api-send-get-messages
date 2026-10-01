@@ -1,9 +1,31 @@
-import "./App.css";
+import { useState } from "react";
+import AuthForm from "./components/AuthForm";
+import ChatWindow from "./components/ChatWindow";
+import type { Credentials } from "./types";
+import { Toaster } from "react-hot-toast";
 
 function App() {
+  const [credentials, setCredentials] = useState<Credentials | null>(null);
+  const [activeChatId, setActiveChatId] = useState<string | null>(null);
+
+  const handleLogout = () => {
+    setCredentials(null);
+    setActiveChatId(null);
+  };
+
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <Toaster position="top-center" />
+      {!credentials ? (
+        <AuthForm onLogin={setCredentials} />
+      ) : (
+        <ChatWindow
+          credentials={credentials}
+          activeChatId={activeChatId}
+          onSetActiveChat={setActiveChatId}
+          onLogout={handleLogout}
+        />
+      )}
     </>
   );
 }
