@@ -7,6 +7,16 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.3-38bdf8?logo=tailwindcss)
 ![Vite](https://img.shields.io/badge/Vite-8.3-646cff?logo=vite)
 
+## Демо
+
+Для обеспечения стабильного доступа из разных регионов и сетей предоставлено несколько зеркал приложения. Если один из сервисов недоступен или работает медленно, пожалуйста, используйте альтернативную ссылку:
+
+| Платформа | Ссылка |
+| :--- | :--- |
+| **Onreza** (RU) | [green-api-send-get-messages-zed-damasky-7j4g.onreza.app](https://green-api-send-get-messages-zed-damasky-7j4g.onreza.app/) | 
+| **Vercel** (Global CDN) | [green-api-send-get-messages.vercel.app](https://green-api-send-get-messages.vercel.app/) | 
+| **TatNet** (RU) | [green-api-send-get-messages.tatnet.app](https://green-api-send-get-messages.tatnet.app/) |
+
 ## Содержание
 
 - [Особенности](#-особенности)
@@ -58,7 +68,7 @@
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/zed-damasky/green-api-send-get-messages.git
    cd green-api-send-get-messages
    ```
 2. **Установите зависимости**
@@ -71,7 +81,7 @@
    Создайте файл .env в корне проекта:
 
     ```env
-   VITE_GREEN_API_BASE_UR=apiUrl
+   VITE_GREEN_API_BASE_UR=yourApiUrl
     ```
 
 4. **Запустите dev-сервер**
@@ -86,4 +96,4 @@
 1. Войдите в систему: введите idInstance и apiTokenInstance из личного кабинета GREEN-API
 2. Создайте новый чат: нажмите "Начать новый чат" и введите номер телефона получателя в международном формате (например, 79991234567)
 3. Отправьте сообщение: напишите текст и нажмите Enter или кнопку отправки
-4. Получайте ответы: входящие сообщения автоматически появятся в чате через polling (интервал 2 секунды)
+4. Получайте ответы: входящие сообщения автоматически появятся в чате через polling
