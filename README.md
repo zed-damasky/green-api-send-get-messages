@@ -50,9 +50,9 @@
 - Node.js 18+
 - npm или yarn
 - Аккаунт в [GREEN-API](https://green-api.com/) с настроенным инстансом MAX:
--- apiUrl
--- idInstance
--- apiTokenInstance
+  - apiUrl
+  - idInstance
+  - apiTokenInstance
 
 ### Шаги установки
 
@@ -60,24 +60,25 @@
    ```bash
    git clone <your-repo-url>
    cd green-api-send-get-messages
-
+   ```
 2. **Установите зависимости**
-  ```bash
+   ```bash
    npm install
-  ```
+   ```
 
 3. **Настройте переменные окружения**
 
-Создайте файл .env в корне проекта:
-  ```env
-  VITE_GREEN_API_BASE_UR=apiUrl
-  ```
+   Создайте файл .env в корне проекта:
+
+    ```env
+   VITE_GREEN_API_BASE_UR=apiUrl
+    ```
 
 4. **Запустите dev-сервер**
-  ```bash
+    ```bash
    npm run dev
-   ```
-и перейдите по адресу http://localhost:5173
+    ```
+   и перейдите по адресу http://localhost:5173
 
 
 ## Использование
