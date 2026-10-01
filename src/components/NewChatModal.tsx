@@ -17,19 +17,19 @@ export default function NewChatModal({
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     let digits = chatId.replace(/\D/g, "");
     console.log("[NewChatModal] Raw digits before submit:", digits);
 
-    if (digits.length > 0 && digits[0] !== "7") {
-      digits = "7" + digits;
+    if (digits.length > 0 && digits[0] === "8") {
+      digits = "7" + digits.slice(1);
     }
 
     console.log("[NewChatModal] Formatted digits to send:", digits);
 
-    if (!/^\d{10,15}$/.test(digits)) {
+    if (!/^\d{10,11}$/.test(digits)) {
       setChatIdError("Введите корректный номер (например, 79991234567)");
       return;
     }
@@ -44,16 +44,16 @@ export default function NewChatModal({
     const digits = e.target.value.replace(/\D/g, "");
     setChatId(digits);
 
-    if (digits.length > 0 && digits.length < 10) {
+    if (digits.length > 0 && digits.length < 11) {
       setChatIdError(
-        `Номер слишком короткий. Введено цифр: ${digits.length} (нужно 10)`,
+        `Номер слишком короткий. Введено цифр: ${digits.length} (нужно 11)`,
       );
     } else {
       setChatIdError("");
     }
   };
 
-  const isFormValid = /^\d{10}$/.test(chatId.replace(/\D/g, ""));
+  const isFormValid = /^\d{11}$/.test(chatId.replace(/\D/g, ""));
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">

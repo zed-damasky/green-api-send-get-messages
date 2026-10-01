@@ -6,11 +6,9 @@ import { Toaster } from "react-hot-toast";
 
 function App() {
   const [credentials, setCredentials] = useState<Credentials | null>(null);
-  const [activeChatId, setActiveChatId] = useState<string | null>(null);
 
   const handleLogout = () => {
     setCredentials(null);
-    setActiveChatId(null);
   };
 
   return (
@@ -19,12 +17,7 @@ function App() {
       {!credentials ? (
         <AuthForm onLogin={setCredentials} />
       ) : (
-        <ChatWindow
-          credentials={credentials}
-          activeChatId={activeChatId}
-          onSetActiveChat={setActiveChatId}
-          onLogout={handleLogout}
-        />
+        <ChatWindow credentials={credentials} onLogout={handleLogout} />
       )}
     </>
   );
