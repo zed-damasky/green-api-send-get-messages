@@ -57,7 +57,7 @@
 ## Установка и запуск
 
 ### Предварительные требования
-- Node.js 18+
+- Node.js 20+
 - npm или yarn
 - Аккаунт в [GREEN-API](https://green-api.com/) с настроенным инстансом MAX:
   - apiUrl
